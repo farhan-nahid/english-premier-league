@@ -1,0 +1,11 @@
+footer a {
+  text-decoration: none;
+  color: coral;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+footer a:hover {
+  color: green;
+  transition: 1.5s;
+}
