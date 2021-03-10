@@ -1,16 +1,18 @@
-
 import { faFacebook, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faFlag, faFutbol, faMapMarkerAlt, faVenusMars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
+import femaleImage from '../../img/female.png';
+import maleImage from '../../img/male.png';
 import './TeamDetails.css';
 
 const TeamDetails = () => {
    const { idTeam } = useParams();
 
-   const [team , setTeam ] = useState([])
-   console.log(team);
-   const{strTeamBanner , strDescriptionDE , strDescriptionEN}=team
+   const [team , setTeam ] = useState([]);
+   
+   const{strTeamBanner  , strDescriptionEN , strStadiumDescription , strTeam , intFormedYear , strCountry , strSport , strGender , strTwitter , strWebsite , strYoutube} = team;
 
    useEffect( () =>{
        const url=`https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${idTeam}`
@@ -18,23 +20,48 @@ const TeamDetails = () => {
         .then (res => res.json())
         .then(data => setTeam(data.teams[0]))
    }, [idTeam])
+
+   
     return (
         
         <>
             <div className="team-banner">
                 <img src={strTeamBanner} alt="..."/>
             </div>
-            <div className="team-information">
-
-            </div>
-            <div className="mt-5">
-                <p>{strDescriptionDE}</p>
-                <p className="mt-5">{strDescriptionEN}</p>
-            </div>
-            <div className="social-link text-center mt-5 mb-5">
-                <span className="text-info"><FontAwesomeIcon icon={faTwitter} /> </span>
-                <span className="text-primary ml-2 mr-3"><FontAwesomeIcon icon={faFacebook} /></span>
-                <span className="text-danger"><FontAwesomeIcon icon={faYoutube} /></span>
+            <div className="player-details">
+                 <div className="container ">
+                    <section className="about-team mt-5" >
+                        <div className="row d-flex">
+                            <div className="col-md-6  p-5">
+                                <h2>{strTeam}</h2>
+                                <h5><FontAwesomeIcon icon={faMapMarkerAlt} /> Founded : {intFormedYear}</h5>
+                                <h5><FontAwesomeIcon icon={faFlag} /> Country : {strCountry}</h5>
+                                <h5><FontAwesomeIcon icon={faFutbol} /> Sport Type : {strSport}</h5>
+                                <h5><FontAwesomeIcon icon={faVenusMars} /> Gender : {strGender}</h5>
+                            </div>
+                            <div className="col-md-6 p-3 image">
+                                {
+                                    strGender ==="Male" ? <img src={maleImage} alt="..." /> : <img src={femaleImage} alt="..." />
+                                }
+                            </div>
+                        </div>
+                    </section>
+                <section className="mt-5">
+                        <p>{strDescriptionEN}</p>
+                        <p className="mt-5">{strStadiumDescription}</p>
+                </section>
+                <section className="social-link text-center mt-5 mb-5">
+                    <a target="-blank" href={`https://${strTwitter}`} className="twitter text-info mr-3">
+                            <FontAwesomeIcon icon={faTwitter}  />
+                    </a>
+                    <a target="-blank" href={`https://${strWebsite}`} className="facebook text-primary ">
+                        <FontAwesomeIcon icon={faFacebook} />
+                    </a>
+                    <a target="-blank" href={`https://${strYoutube}`} className="youTube text-danger ml-3">
+                            <FontAwesomeIcon icon={faYoutube} />
+                     </a>
+                </section>
+                </div>
             </div>
         </>
     );

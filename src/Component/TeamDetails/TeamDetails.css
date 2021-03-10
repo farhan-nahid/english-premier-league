@@ -5,9 +5,35 @@
 
 img {
   width: 100%;
-  height: 260px;
+  height: 300px;
+  object-fit: cover;
 }
 
-span {
+.social-link {
   font-size: 25px;
+}
+
+.player-details {
+  background-color: #157dd65c;
+  overflow: hidden;
+  color: #5c3f3f;
+}
+
+.about-team {
+  background: #4444e4;
+  color: white;
+  border-radius: 20px;
+  box-shadow: 10px 10px 30px gray;
+}
+
+a .facebook {
+  text-decoration: none;
+}
+
+a.twitter {
+  text-decoration: none;
+}
+
+a.youTube {
+  text-decoration: none;
 }

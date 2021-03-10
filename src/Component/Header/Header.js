@@ -4,7 +4,7 @@ import './Header.css';
 const Header = () => {
     return (
         <header>
-          {/* banner part add in header.css */}
+          <h1>English Premium League</h1>
         </header>
     );
 };
