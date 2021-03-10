@@ -1,4 +1,5 @@
-import { faFacebook } from '@fortawesome/free-solid-brands-icons';
+
+import { faFacebook, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
@@ -30,8 +31,10 @@ const TeamDetails = () => {
                 <p>{strDescriptionDE}</p>
                 <p className="mt-5">{strDescriptionEN}</p>
             </div>
-            <div className="social-link">
-                <h3><FontAwesomeIcon icon={faFacebook} /> </h3>
+            <div className="social-link text-center mt-5 mb-5">
+                <span className="text-info"><FontAwesomeIcon icon={faTwitter} /> </span>
+                <span className="text-primary ml-2 mr-3"><FontAwesomeIcon icon={faFacebook} /></span>
+                <span className="text-danger"><FontAwesomeIcon icon={faYoutube} /></span>
             </div>
         </>
     );

@@ -15,7 +15,7 @@ const SingleTeam = (props) => {
                      <h3>{strTeam}</h3>
                     <p> Sports Type : {strSport}</p>
                     <Button as={Link} to={`/team/${idTeam}`} key={idTeam} variant="warning"> Explore 
-                     <span className="ml-2"  >  <FontAwesomeIcon icon={faArrowRight} /> </span> </Button>
+                      <FontAwesomeIcon icon={faArrowRight} /> </Button>
                 </Card.Body>  
         </Card>
         </Col>
