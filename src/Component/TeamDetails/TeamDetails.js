@@ -2,6 +2,7 @@ import { faFacebook, faTwitter, faYoutube } from '@fortawesome/free-brands-svg-i
 import { faFlag, faFutbol, faMapMarkerAlt, faVenusMars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useEffect, useState } from 'react';
+import { Card, Image } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import femaleImage from '../../img/female.png';
 import maleImage from '../../img/male.png';
@@ -12,7 +13,7 @@ const TeamDetails = () => {
 
    const [team , setTeam ] = useState([]);
    
-   const{strTeamBanner  , strDescriptionEN , strStadiumDescription , strTeam , intFormedYear , strCountry , strSport , strGender , strTwitter , strWebsite , strYoutube} = team;
+   const{strStadiumThumb  , strTeamBadge, strDescriptionEN , strStadiumDescription , strTeam , intFormedYear , strCountry , strSport , strGender , strTwitter , strWebsite , strYoutube} = team;
 
    useEffect( () =>{
        const url=`https://www.thesportsdb.com/api/v1/json/1/lookupteam.php?id=${idTeam}`
@@ -25,9 +26,14 @@ const TeamDetails = () => {
     return (
         
         <>
-            <div className="team-banner">
-                <img src={strTeamBanner} alt="..."/>
-            </div>
+            <Card>
+                <Card.Img className="stadium-image" src={strStadiumThumb} alt="..." />
+                <div>
+                    <Card.ImgOverlay>
+                        <Image className="team-logo margin-auto" src={strTeamBadge } alt="..." />
+                    </Card.ImgOverlay>
+                </div>
+            </Card>
             <div className="player-details">
                  <div className="container ">
                     <section className="about-team mt-5" >
@@ -39,7 +45,7 @@ const TeamDetails = () => {
                                 <h5><FontAwesomeIcon icon={faFutbol} /> Sport Type : {strSport}</h5>
                                 <h5><FontAwesomeIcon icon={faVenusMars} /> Gender : {strGender}</h5>
                             </div>
-                            <div className="col-md-6 p-3 image">
+                            <div className="col-md-6  conditional-image">
                                 {
                                     strGender ==="Male" ? <img src={maleImage} alt="..." /> : <img src={femaleImage} alt="..." />
                                 }

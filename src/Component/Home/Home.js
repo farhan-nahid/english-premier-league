@@ -19,7 +19,7 @@ const Home = () => {
     return (
         <>
             <Header />
-                <main >
+                <main className="pt-4" >
                     <Container>
                         <Row>
                             {

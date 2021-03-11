@@ -8,8 +8,8 @@ import './SingleTeam.css';
 const SingleTeam = (props) => {
     const {strTeam , strSport , strTeamBadge , idTeam} = props.team
     return (
-             <Col lg={4} md={6} xs={12} className=" mt-3 p-3 ">
-                <Card className="card  mt-4 p-5 bg-light team-card">
+             <Col lg={4} md={6} xs={12}>
+                <Card className="card  mt-1 p-5 bg-light team-card">
                     <Card.Img variant="top" className="card-image m-auto" src={strTeamBadge} alt="..." />
                         <Card.Body className="text-center">
                             <h3>{strTeam}</h3>
