@@ -61,3 +61,12 @@ a.youTube {
     text-align: center;
   }
 }
+@media (max-width: 400px) {
+  .team-logo {
+    margin-left: 25%;
+    margin-top: 10%;
+    height: 150px;
+    width: 150px;
+    text-align: center;
+  }
+}
