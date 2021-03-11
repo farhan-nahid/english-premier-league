@@ -16,5 +16,6 @@ Features:
 *: change design & website Name
 *: add hover & shadow  effect in card
 *: linking the social icons.
+*  add navbar (click on the name you can change the path)
 
 </--  website link: https://englishpremiumleague.netlify.app/  -->
