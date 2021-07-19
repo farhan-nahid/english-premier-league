@@ -1,8 +1,7 @@
-# Website Name : English Premier League
+## [English Premier League](https://englishpremiumleague.netlify.app/)
 
-Features:
 
-#main_part
+## Main Part
 * home page banner
 * 3 cards in a row in desktop view
 * daynamic details banner for every team
@@ -11,11 +10,9 @@ Features:
 * using react-route
 * using fontawesome icon
 
-#Bonus_part
+## Bonus Part
 * website is responsive for any device(desktop, laptop, tab, mobile)
 * change design & website Name
 * add hover & shadow  effect in card
 * linking the social icons.
 *  add navbar (click on the name you can change the path)
-
-</--  website link: https://englishpremiumleague.netlify.app/  -->
